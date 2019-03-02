@@ -1,0 +1,32 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-image: url(../assets/background_1.jpg);
+  background-position: center center;
+  background-size: cover;
+}
+
+.error {
+  width: 30%;
+  border: 1px solid #a94442;
+  color: #a94442;
+  background-color: #f2dede;
+}
+
+.created {
+  width: 60%;
+  border: 1px solid #3c6f4c;
+  color: #29965f;
+  background-color: #def2e6;
+}
+
+.error, .created {
+  margin: 0 auto;
+  padding: 10px;
+  text-align: left;
+  border-radius: 5px;
+  font-size: 18px;
+}

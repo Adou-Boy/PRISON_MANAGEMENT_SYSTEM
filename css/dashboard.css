@@ -1,0 +1,28 @@
+.right_side {
+  width: 80%;
+  background-color: #f3f3f3;
+}
+
+.container {
+  width: 80%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  margin: 30px auto;
+}
+
+.item {
+  width: calc(100% / 4);
+  border: 1px solid #eeeeee;
+  background-color: #aaa;
+  padding: 30px 10px;
+  font-size: 20px;
+  text-align: center;
+  font-variant: small-caps;
+  margin: 10px;
+}
+
+.item a {
+  text-decoration: none;
+  color: #0e0e0eba;
+}
