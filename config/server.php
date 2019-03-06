@@ -60,7 +60,8 @@
       $query = "SELECT * FROM register WHERE employee_id='$employee_id' AND password='$password'";
       $result = mysqli_query($db, $query);
       if (mysqli_num_rows($result) == 1) {
-        header('location: ../jailor_index.php');
+        $_SESSION['name'] = $name;
+        header('location: ../dashboard.php');
       } else {
         array_push($errors, "Incorrect employee id/password combination");
       }
@@ -69,6 +70,7 @@
 
   if(isset($_GET['logout'])) {
     session_destroy();
+    unset($_SESSION['name']);
     header('location: register_sign-in/login.php');
   }
 ?>

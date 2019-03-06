@@ -24,13 +24,12 @@
   width: 20%;
   background-color: #aaa;
   padding-top: 10px;
-  padding-bottom: 130px;
+  /* padding-bottom: 100px; */
 }
 
 .left-side_nav ul {
   width: 100%;
   list-style-type: none
-
 }
 
 .left-side_nav ul li {

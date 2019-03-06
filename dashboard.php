@@ -1,5 +1,8 @@
 <?php include('config/server.php');
-
+  //If user is not logged in they cannot access this page
+  // if (empty($_SESSION['name'])) {
+  //   header('location: register_sign-in/login.php');
+  // }
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -19,7 +22,7 @@
       </div>
       <?php include('header.php'); ?>
       <div class="sign_up-in">
-        <a href="jailor_index.php?logout='1'">log out</a>
+        <a href="dashboard.php?logout='1'">log out</a>
       </div>
     </div>
     <div class="main_content">
@@ -32,7 +35,8 @@
           <li><a href="#">Remand Case</a></li>
           <li><a href="#">Education Details</a></li>
           <li><a href="#">Case</a></li>
-          <li><a href="#">Jailer Details</a></li>
+          <li><a href="#">Jailer</a></li>
+          <li><a href="#">Lawyer</a></li>
         </ul>
       </div>
 
@@ -90,7 +94,7 @@
             <a href="#">
               <figure>
                 <img src="" alt="">
-                <figcaption>Jailer Details</figcaption>
+                <figcaption>Jailer</figcaption>
               </figure>
             </a>
           </div>
@@ -98,7 +102,7 @@
             <a href="#">
               <figure>
                 <img src="" alt="">
-                <figcaption>First Information Report</figcaption>
+                <figcaption>Lawyer</figcaption>
               </figure>
             </a>
           </div>

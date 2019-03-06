@@ -14,7 +14,7 @@
       </div>
       <?php include('header.php'); ?>
       <div class="sign_up-in">
-        <a href="jailor_index.php?logout='1'">log out</a>
+        <a href="dashboard.php?logout='1'">log out</a>
       </div>
     </div>
 
