@@ -36,6 +36,7 @@
   border-bottom: 1px solid #fefefe;
   font-size: 22px;
   padding: 20px 0 5px 5px;
+  cursor: pointer;
 }
 
 .left-side_nav li a {
@@ -51,4 +52,17 @@
 
 .left-side_nav li:hover a {
   color: #aaa;
+}
+
+.left-side_nav .active {
+  background-color: #0e0e0eba;
+}
+
+.left-side_nav .active a {
+  color: #a3a4a9;
+}
+
+.right_side {
+  width: 80%;
+  background-color: #f3f3f3;
 }

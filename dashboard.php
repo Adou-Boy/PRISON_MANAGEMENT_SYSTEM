@@ -28,8 +28,8 @@
     <div class="main_content">
       <div class="left-side_nav">
         <ul>
-          <li><a href="#">Dashboard</a></li>
-          <li><a href="#">Prisoner</a></li>
+          <li><a href="dashboard.php">Dashboard</a></li>
+          <li><a href="prisoner.php">Prisoner</a></li>
           <li><a href="#">Training</a></li>
           <li><a href="#">Transfer</a></li>
           <li><a href="#">Remand Case</a></li>
