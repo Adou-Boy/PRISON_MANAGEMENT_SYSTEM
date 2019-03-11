@@ -1,21 +1,25 @@
 .container {
-  width: 80%;
+  width: 70.5%;
   margin: 30px auto;
 }
 
 .tabs {
-  overflow: hidden;
+  /* overflow: hidden; */
   border: 1px solid #eeeeee;
   background-color: #aaa;
-  border-radius: 25px 25px 0 0;
+  /* border-radius: 25px 25px 0 0; */
+  /* padding-bottom: 20px; */
+  display: flex;
+  flex-flow: row wrap;
 }
 
 .tabs .tablink {
   background-color: inherit;
-  float: left;
+  /* display: inline-block; */
   border: none;
   cursor: pointer;
-  padding: 20px 124.5px;
+  padding: 20px 0px;
+  width: calc(100% / 2);
 }
 
 .tabs .active {
@@ -32,6 +36,4 @@
   background-color: #f3f3f3;
   display: none;
   padding: 15px;
-  border: 1px solid #ccc;
-  border-top: none;
 }

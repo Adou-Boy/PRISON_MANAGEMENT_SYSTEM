@@ -1,0 +1,14 @@
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+tr {
+  border-bottom: 1px solid #cbcbcb;
+}
+th, td {
+  border: none;
+  height: 30px;
+  padding: 2px;
+}

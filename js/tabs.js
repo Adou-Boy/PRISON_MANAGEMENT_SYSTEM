@@ -8,7 +8,7 @@ function openTab(e, tabId) {
 
   // Remove active for the tabs link if its active
   tablink = document.getElementsByClassName('tablink');
-  for (var i = 0; i < tablink.length; i++) {
+  for (i = 0; i < tablink.length; i++) {
     tablink[i].className  = tablink[i].className.replace('active', "");
   }
 

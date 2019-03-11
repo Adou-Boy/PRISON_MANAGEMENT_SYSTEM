@@ -1,3 +1,4 @@
+<?php include('config/upload.php'); ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -7,6 +8,8 @@
     <link rel="stylesheet" href="register_sign-in/css/sign_up-sign_in.css">
     <link rel="stylesheet" href="css/home_index.css">
     <link rel="stylesheet" href="css/prisoner.css">
+    <link rel="stylesheet" href="css/prisoner_list.css">
+    <link rel="stylesheet" href="css/prisoner_details.css">
     <script type="text/javascript" src="js/tabs.js"></script>
     <title>SIGN IN</title>
   </head>
@@ -42,13 +45,82 @@
             <button class="tablink" onclick="openTab(event, 'tab2')"><h1>Add Prisoner</h1></button>
           </div>
 
-          <div id="tab1" class="tabContent">
-            Tab 1 Content
+          <div class="right_side_container">
+            <div id="tab1" class="tabContent">
+              <table>
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>NAME</th>
+                    <th>GENDER</th>
+                    <th>AGE</th>
+                    <th>ADDRESS</th>
+                    <th>ENTRY DATE</th>
+                    <th>RELEASE DATE</th>
+                    <th colspan="2">ACTION</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>PS 101</td>
+                    <td>testname</td>
+                    <td>male</td>
+                    <td>30</td>
+                    <td>Serrekunda East</td>
+                    <td>12/03/2002</td>
+                    <td>1/05/2012</td>
+                    <td>
+                      <a href="#">Edit</a>
+                    </td>
+                    <td>
+                      <a href="#">Delete</a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div id="tab2" class="tabContent">
+              <form action="prisoner.php" method="post" enctype="multipart/form-data">
+                <div class="input-info">
+                    <input type="file" name="profile_pic">
+                </div>
+                <div class="input-info">
+                  <label>prisoner id</label>
+                  <input type="text" name="prisoner_id">
+                </div>
+                <div class="input-info">
+                  <label>prisoner name</label>
+                  <input type="text" name="prisoner_name">
+                </div>
+                <div class="input-info">
+                  <label>gender</label>
+                  <input type="text" name="prisoner_gender">
+                </div>
+                <div class="input-info">
+                  <label>age</label>
+                  <input type="text" name="prisoner_age">
+                </div>
+                <div class="input-info">
+                  <label>address</label>
+                  <input type="text" name="prisoner_address">
+                </div>
+                <div class="input-info">
+                  <label>entry date</label>
+                  <input type="date" name="prisoner_entry-date">
+                </div>
+                <div class="input-info">
+                  <label>release date</label>
+                  <input type="date" name="prisoner_release-date">
+                </div>
+
+                <div>
+                  <button  type="submit" name="save" class="btn">save</button>
+                </div>
+              </form>
+            </div>
           </div>
 
-          <div id="tab2" class="tabContent">
-            Tab 2 Content
-          </div>
         </div>
       </div>
     </div>
