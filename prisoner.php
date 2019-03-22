@@ -39,6 +39,14 @@
       </div>
 
       <div class="right_side">
+        <?php if (isset($_SESSION['msg'])): ?>
+            <div class="msg">
+              <?php
+                echo $_SESSION['msg'];
+                unset($_SESSION['msg']);
+               ?>
+            </div>
+        <?php endif ?>
         <div class="container">
           <div class="tabs">
             <button class="tablink active" onclick="openTab(event, 'tab1')"><h1>Prisoner List</h1></button>
@@ -46,10 +54,11 @@
           </div>
 
           <div class="right_side_container">
-            <div id="tab1" class="tabContent">
+            <div id="tab1" class="tabContent tabMainContent">
               <table>
                 <thead>
                   <tr>
+                    <th>No</th>
                     <th>ID</th>
                     <th>NAME</th>
                     <th>GENDER</th>
@@ -61,27 +70,33 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>PS 101</td>
-                    <td>testname</td>
-                    <td>male</td>
-                    <td>30</td>
-                    <td>Serrekunda East</td>
-                    <td>12/03/2002</td>
-                    <td>1/05/2012</td>
-                    <td>
-                      <a href="#">Edit</a>
-                    </td>
-                    <td>
-                      <a href="#">Delete</a>
-                    </td>
-                  </tr>
+                  <?php while ($count > 0 && $row = mysqli_fetch_array($results)) { ?>
+                    <tr>
+                      <td><?php echo $count; ?></td>
+                      <td><?php echo $row['prisoner_id']; ?></td>
+                      <td><?php echo $row['name']; ?></td>
+                      <td><?php echo $row['gender']; ?></td>
+                      <td><?php echo $row['age']; ?></td>
+                      <td><?php echo $row['address']; ?></td>
+                      <td><?php echo $row['entry_date']; ?></td>
+                      <td><?php echo $row['release_date']; ?></td>
+                      <td>
+                        <a href="edit_prisoner.php?edit='1'">Edit</a>
+                      </td>
+                      <td>
+                        <a href="#">Delete</a>
+                      </td>
+                    </tr>
+                    <?php $count = $count + 1; ?>
+                  <?php  } ?>
+
                 </tbody>
               </table>
             </div>
 
             <div id="tab2" class="tabContent">
               <form action="prisoner.php" method="post" enctype="multipart/form-data">
+                <input type="hidden" name="counter" value="$count">
                 <div class="input-info">
                     <input type="file" name="profile_pic">
                 </div>
@@ -115,7 +130,7 @@
                 </div>
 
                 <div>
-                  <button  type="submit" name="save" class="btn">save</button>
+                    <button  type="submit" name="save" class="btn">save</button>
                 </div>
               </form>
             </div>
