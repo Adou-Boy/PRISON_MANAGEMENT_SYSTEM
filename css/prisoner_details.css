@@ -23,12 +23,14 @@
 
 
 .input-info input[type="text"],
-.input-info input[type="date"] {
+.input-info input[type="date"],
+.input-info input[type="email"]  {
   font-size: 20px;
   line-height: 20px;
 }
 
-.input-info input[type="text"] {
+.input-info input[type="text"],
+.input-info input[type="email"] {
     padding: 0 150px 0 2px;
 }
 

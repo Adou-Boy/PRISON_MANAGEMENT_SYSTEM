@@ -46,8 +46,8 @@
         <?php endif ?>
         <div class="container">
           <div class="tabs">
-            <button class="tablink active" onclick="openTab(event, 'tab1')"><h1>Prisoner List</h1></button>
-            <button class="tablink" onclick="openTab(event, 'tab2')"><h1>Add Prisoner</h1></button>
+            <button class="tablink active" onclick="openTab(event, 'tab1')"><h1>Case List</h1></button>
+            <button class="tablink" onclick="openTab(event, 'tab2')"><h1>Add Case</h1></button>
           </div>
 
           <div class="right_side_container">
@@ -56,36 +56,12 @@
                 <thead>
                   <tr>
                     <th>No</th>
-                    <th>ID</th>
-                    <th>NAME</th>
-                    <th>GENDER</th>
-                    <th>AGE</th>
-                    <th>ADDRESS</th>
-                    <th>ENTRY DATE</th>
-                    <th>RELEASE DATE</th>
+                    <th>CASE TYPE</th>
+                    <th>CASE DESCRIPTION</th>
                     <th colspan="2">ACTION</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <?php while ($count > 0 && $row = mysqli_fetch_array($results)) { ?>
-                    <tr>
-                      <td><?php echo $count; ?></td>
-                      <td><?php echo $row['prisoner_id']; ?></td>
-                      <td><?php echo $row['name']; ?></td>
-                      <td><?php echo $row['gender']; ?></td>
-                      <td><?php echo $row['age']; ?></td>
-                      <td><?php echo $row['address']; ?></td>
-                      <td><?php echo $row['entry_date']; ?></td>
-                      <td><?php echo $row['release_date']; ?></td>
-                      <td>
-                        <a href="edit_prisoner.php?edit=">Edit</a>
-                      </td>
-                      <td>
-                        <a href="#">Delete</a>
-                      </td>
-                    </tr>
-                    <?php $count = $count + 1; ?>
-                  <?php  } ?>
 
                 </tbody>
               </table>
@@ -93,36 +69,14 @@
 
             <div id="tab2" class="tabContent">
               <form action="prisoner.php" method="post" enctype="multipart/form-data">
+
                 <div class="input-info">
-                    <input type="file" name="profile_pic">
-                </div>
-                <div class="input-info">
-                  <label>prisoner id</label>
-                  <input type="text" name="prisoner_id">
-                </div>
-                <div class="input-info">
-                  <label>prisoner name</label>
+                  <label>crime type</label>
                   <input type="text" name="prisoner_name">
                 </div>
                 <div class="input-info">
-                  <label>gender</label>
-                  <input type="text" name="prisoner_gender">
-                </div>
-                <div class="input-info">
-                  <label>age</label>
-                  <input type="text" name="prisoner_age">
-                </div>
-                <div class="input-info">
-                  <label>address</label>
-                  <input type="text" name="prisoner_address">
-                </div>
-                <div class="input-info">
-                  <label>entry date</label>
-                  <input type="date" name="prisoner_entry-date">
-                </div>
-                <div class="input-info">
-                  <label>release date</label>
-                  <input type="date" name="prisoner_release-date">
+                  <label>crime description</label>
+                  <textarea name="crime_description" rows="10" cols="80"></textarea>
                 </div>
 
                 <div>

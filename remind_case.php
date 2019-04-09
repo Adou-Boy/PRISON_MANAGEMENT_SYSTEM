@@ -46,8 +46,8 @@
         <?php endif ?>
         <div class="container">
           <div class="tabs">
-            <button class="tablink active" onclick="openTab(event, 'tab1')"><h1>Prisoner List</h1></button>
-            <button class="tablink" onclick="openTab(event, 'tab2')"><h1>Add Prisoner</h1></button>
+            <button class="tablink active" onclick="openTab(event, 'tab1')"><h1>Remind List</h1></button>
+            <button class="tablink" onclick="openTab(event, 'tab2')"><h1>Add individual to remind</h1></button>
           </div>
 
           <div class="right_side_container">
@@ -67,25 +67,6 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <?php while ($count > 0 && $row = mysqli_fetch_array($results)) { ?>
-                    <tr>
-                      <td><?php echo $count; ?></td>
-                      <td><?php echo $row['prisoner_id']; ?></td>
-                      <td><?php echo $row['name']; ?></td>
-                      <td><?php echo $row['gender']; ?></td>
-                      <td><?php echo $row['age']; ?></td>
-                      <td><?php echo $row['address']; ?></td>
-                      <td><?php echo $row['entry_date']; ?></td>
-                      <td><?php echo $row['release_date']; ?></td>
-                      <td>
-                        <a href="edit_prisoner.php?edit=">Edit</a>
-                      </td>
-                      <td>
-                        <a href="#">Delete</a>
-                      </td>
-                    </tr>
-                    <?php $count = $count + 1; ?>
-                  <?php  } ?>
 
                 </tbody>
               </table>
@@ -93,15 +74,13 @@
 
             <div id="tab2" class="tabContent">
               <form action="prisoner.php" method="post" enctype="multipart/form-data">
+
                 <div class="input-info">
-                    <input type="file" name="profile_pic">
+                  <label>id</label>
+                  <input type="text" name="remind_id">
                 </div>
                 <div class="input-info">
-                  <label>prisoner id</label>
-                  <input type="text" name="prisoner_id">
-                </div>
-                <div class="input-info">
-                  <label>prisoner name</label>
+                  <label>full name</label>
                   <input type="text" name="prisoner_name">
                 </div>
                 <div class="input-info">
@@ -117,12 +96,20 @@
                   <input type="text" name="prisoner_address">
                 </div>
                 <div class="input-info">
-                  <label>entry date</label>
-                  <input type="date" name="prisoner_entry-date">
+                  <label>remind_unit</label>
+                  <input type="text" name="remind_unit">
                 </div>
                 <div class="input-info">
-                  <label>release date</label>
-                  <input type="date" name="prisoner_release-date">
+                  <label>hearing date</label>
+                  <input type="date" name="hearing-date">
+                </div>
+                <div class="input-info">
+                  <label>case type</label>
+                  <input type="text" name="crime_type">
+                </div>
+                <div class="input-info">
+                  <label>case description</label>
+                  <textarea name="crime_description" rows="10" cols="60"></textarea>
                 </div>
 
                 <div>

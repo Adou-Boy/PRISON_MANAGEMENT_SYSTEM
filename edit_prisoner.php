@@ -1,21 +1,21 @@
 <?php include('config/upload.php');
-if(isset($_GET['edit'])) {
-  $record = mysqli_query($db, "SELECT * FROM prisoner");
-  while($rows = mysqli_fetch_array($record)) {
-    $check = $rows['counter'];
-    $exist = mysqli_query($db,  "SELECT * FROM prisoner WHERE $count ='$check'");
-    if (mysqli_num_rows($exist) == 1) {
-      $new_prisoner_id = $rows['prisoner_id'];
-      $new_name = $rows['prisoner_name'];
-      $new_gender = $rows['prisoner_gender'];
-      $new_age = $rows['prisoner_age'];
-      $new_address = $rows['prisoner_address'];
-      $new_entry_date = $rows['prisoner_entry-date'];
-      $new_release_date = $rows['prisoner_release-date'];
-    }
-
-  }
-}
+// if(isset($_GET['edit'])) {
+//   // $record = mysqli_query($db, "SELECT * FROM prisoner");
+//   // while($rows = mysqli_fetch_array($record)) {
+//   //   $check = $rows['counter'];
+//     // $exist = mysqli_query($db,  "SELECT * FROM prisoner WHERE $count ='$check'");
+//     // if (mysqli_num_rows($exist) == 1) {
+//     //   $new_prisoner_id = $rows['prisoner_id'];
+//     //   $new_name = $rows['prisoner_name'];
+//     //   $new_gender = $rows['prisoner_gender'];
+//     //   $new_age = $rows['prisoner_age'];
+//     //   $new_address = $rows['prisoner_address'];
+//     //   $new_entry_date = $rows['prisoner_entry-date'];
+//     //   $new_release_date = $rows['prisoner_release-date'];
+//     // }
+//
+//   }
+// }
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">

@@ -1,9 +1,4 @@
-<?php include('config/server.php');
-  //If user is not logged in they cannot access this page
-  // if (empty($_SESSION['name'])) {
-  //   header('location: register_sign-in/login.php');
-  // }
-?>
+<?php include('config/server.php'); ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -30,20 +25,17 @@
         <ul>
           <li><a href="dashboard.php">Dashboard</a></li>
           <li><a href="prisoner.php">Prisoner</a></li>
-          <li><a href="#">Training</a></li>
-          <li><a href="#">Transfer</a></li>
-          <li><a href="#">Remand Case</a></li>
-          <li><a href="#">Education Details</a></li>
-          <li><a href="#">Case</a></li>
-          <li><a href="#">Jailer</a></li>
-          <li><a href="#">Lawyer</a></li>
+          <li><a href="transfer.php">Transfer</a></li>
+          <li><a href="remind_case.php">Remind Case</a></li>
+          <li><a href="case.php">Case</a></li>
+          <li><a href="lawyer.php">Lawyer</a></li>
         </ul>
       </div>
 
       <div class="right_side">
         <div class="container">
           <div class="item">
-            <a href="#">
+            <a href="prisoner.php">
               <figure>
                 <img src="" alt="">
                 <figcaption>Prisoner</figcaption>
@@ -51,15 +43,7 @@
             </a>
           </div>
           <div class="item">
-            <a href="#">
-              <figure>
-                <img src="" alt="">
-                <figcaption>Training</figcaption>
-              </figure>
-            </a>
-          </div>
-          <div class="item">
-            <a href="#">
+            <a href="transfer.php">
               <figure>
                 <img src="" alt="">
                 <figcaption>Transfer</figcaption>
@@ -67,23 +51,15 @@
             </a>
           </div>
           <div class="item">
-            <a href="#">
+            <a href="remind_case.php">
               <figure>
                 <img src="" alt="">
-                <figcaption>Remand Case</figcaption>
+                <figcaption>Remind Case</figcaption>
               </figure>
             </a>
           </div>
           <div class="item">
-            <a href="#">
-              <figure>
-                <img src="" alt="">
-                <figcaption>Education Details</figcaption>
-              </figure>
-            </a>
-          </div>
-          <div class="item">
-            <a href="#">
+            <a href="case.php">
               <figure>
                 <img src="" alt="">
                 <figcaption>Case</figcaption>
@@ -91,26 +67,10 @@
             </a>
           </div>
           <div class="item">
-            <a href="#">
-              <figure>
-                <img src="" alt="">
-                <figcaption>Jailer</figcaption>
-              </figure>
-            </a>
-          </div>
-          <div class="item">
-            <a href="#">
+            <a href="lawyer.php">
               <figure>
                 <img src="" alt="">
                 <figcaption>Lawyer</figcaption>
-              </figure>
-            </a>
-          </div>
-          <div class="item">
-            <a href="#">
-              <figure>
-                <img src="" alt="">
-                <figcaption>Guards</figcaption>
               </figure>
             </a>
           </div>

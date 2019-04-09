@@ -15,14 +15,19 @@
   font-size: 18px;
 }
 
+body {
+  background-color: #aaa;
+}
+
 .main_content {
   display: flex;
   flex-flow: row wrap;
+  /* overflow: visible; */
 }
 
 .left-side_nav {
   width: 20%;
-  background-color: #aaa;
+  background-color: inherit;
   padding-top: 10px;
   /* padding-bottom: 100px; */
 }
@@ -37,8 +42,8 @@
   font-size: 22px;
   padding: 20px 0 5px 5px;
   cursor: pointer;
+  position: relative;
 }
-
 .left-side_nav li a {
   text-decoration: none;
   font-variant: small-caps;
@@ -64,5 +69,12 @@
 
 .right_side {
   width: 80%;
+  height: auto;
+  background-size: cover;
   background-color: #f3f3f3;
+}
+
+.input-info select {
+  padding-right: 200px;
+  font-size: 20px;
 }
