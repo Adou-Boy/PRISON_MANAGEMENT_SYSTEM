@@ -56,8 +56,8 @@
                 <thead>
                   <tr>
                     <th>No</th>
-                    <th>PRISONER ID</th>
-                    <th>TRANSFER ID</th>
+                    <th>PRI_ID</th>
+                    <th>TRANS_ID</th>
                     <th>FROM</th>
                     <th>TO</th>
                     <th>DATE</th>
@@ -66,13 +66,30 @@
                   </tr>
                 </thead>
                 <tbody>
-
+                  <?php while ($count > 0 && $row = mysqli_fetch_array($transfer_results)) { ?>
+                    <tr>
+                      <td><?php echo $count; ?></td>
+                      <td><?php echo $row['prisoner_id']; ?></td>
+                      <td><?php echo $row['id']; ?></td>
+                      <td><?php echo $row['location_from']; ?></td>
+                      <td><?php echo $row['location_to']; ?></td>
+                      <td><?php echo $row['transfer_date']; ?></td>
+                      <td><?php echo $row['transfer_reason']; ?></td>
+                      <td>
+                        <a href="edit_prisoner.php?edit=">Edit</a>
+                      </td>
+                      <td>
+                        <a href="#">Delete</a>
+                      </td>
+                    </tr>
+                    <?php $count = $count + 1; ?>
+                  <?php  } ?>
                 </tbody>
               </table>
             </div>
 
             <div id="tab2" class="tabContent">
-              <form action="prisoner.php" method="post" enctype="multipart/form-data">
+              <form action="transfer.php" method="post" enctype="multipart/form-data">
                 <div class="input-info">
                   <label>prisoner id</label>
                   <select class="" name="id">
@@ -83,23 +100,23 @@
                 </div>
                 <div class="input-info">
                   <label>transfer id</label>
-                  <input type="text" name="prisoner_name">
+                  <input type="text" name="transfer_id">
                 </div>
                 <div class="input-info">
                   <label>location from</label>
-                  <input type="text" name="prisoner_name">
+                  <input type="text" name="location_from">
                 </div>
                 <div class="input-info">
                   <label>location to</label>
-                  <input type="text" name="prisoner_gender">
+                  <input type="text" name="location_to">
                 </div>
                 <div class="input-info">
                   <label>transfer date</label>
-                  <input type="date" name="prisoner_name">
+                  <input type="date" name="transfer_date">
                 </div>
                 <div class="input-info">
                   <label>transfer reason</label>
-                  <textarea name="name" rows="8" cols="80"></textarea>
+                  <textarea name="transfer_reason" rows="8" cols="80"></textarea>
                 </div>
 
                 <div>

@@ -67,13 +67,31 @@
                   </tr>
                 </thead>
                 <tbody>
-
+                  <?php while ($count > 0 && $row = mysqli_fetch_array($lawyer_results)) { ?>
+                    <tr>
+                      <td><?php echo $count; ?></td>
+                      <td><?php echo $row['prisoner_id']; ?></td>
+                      <td><?php echo $row['lawyer_id']; ?></td>
+                      <td><?php echo $row['full_name']; ?></td>
+                      <td><?php echo $row['gender']; ?></td>
+                      <td><?php echo $row['phone']; ?></td>
+                      <td><?php echo $row['email']; ?></td>
+                      <td><?php echo $row['address']; ?></td>
+                      <td>
+                        <a href="edit_prisoner.php?edit=">Edit</a>
+                      </td>
+                      <td>
+                        <a href="#">Delete</a>
+                      </td>
+                    </tr>
+                    <?php $count = $count + 1; ?>
+                  <?php  } ?>
                 </tbody>
               </table>
             </div>
 
             <div id="tab2" class="tabContent">
-              <form action="prisoner.php" method="post" enctype="multipart/form-data">
+              <form action="lawyer.php" method="post" enctype="multipart/form-data">
                 <div class="input-info">
                   <label>prisoner id</label>
                   <select class="" name="id">
@@ -84,7 +102,7 @@
                 </div>
                 <div class="input-info">
                   <label>lawyer id</label>
-                  <input type="text" name="prisoner_id">
+                  <input type="text" name="lawyer_id">
                 </div>
                 <div class="input-info">
                   <label>lawyer name</label>
@@ -96,15 +114,15 @@
                 </div>
                 <div class="input-info">
                   <label>phone</label>
-                  <input type="text" name="prisoner_gender">
+                  <input type="text" name="lawyer_phone">
                 </div>
                 <div class="input-info">
                   <label>email</label>
-                  <input type="email" name="prisoner_age">
+                  <input type="email" name="lawyer_email">
                 </div>
                 <div class="input-info">
                   <label>address</label>
-                  <textarea name="lawyer_address" rows="5" cols="55"></textarea>
+                  <textarea name="prisoner_address" rows="5" cols="55"></textarea>
                 </div>
 
                 <div>

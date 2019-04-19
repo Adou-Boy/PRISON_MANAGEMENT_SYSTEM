@@ -61,23 +61,41 @@
                     <th>GENDER</th>
                     <th>AGE</th>
                     <th>ADDRESS</th>
-                    <th>ENTRY DATE</th>
-                    <th>RELEASE DATE</th>
+                    <th>REMIND UNIT</th>
+                    <th>HEARING DATE</th>
                     <th colspan="2">ACTION</th>
                   </tr>
                 </thead>
                 <tbody>
-
+                  <?php while ($count > 0 && $row = mysqli_fetch_array($remind_results)) { ?>
+                    <tr>
+                      <td><?php echo $count; ?></td>
+                      <td><?php echo $row['remind_id']; ?></td>
+                      <td><?php echo $row['name']; ?></td>
+                      <td><?php echo $row['gender']; ?></td>
+                      <td><?php echo $row['age']; ?></td>
+                      <td><?php echo $row['address']; ?></td>
+                      <td><?php echo $row['remind_unit']; ?></td>
+                      <td><?php echo $row['hearing_date']; ?></td>
+                      <td>
+                        <a href="edit_prisoner.php?edit=">Edit</a>
+                      </td>
+                      <td>
+                        <a href="#">Delete</a>
+                      </td>
+                    </tr>
+                    <?php $count = $count + 1; ?>
+                  <?php  } ?>
                 </tbody>
               </table>
             </div>
 
             <div id="tab2" class="tabContent">
-              <form action="prisoner.php" method="post" enctype="multipart/form-data">
+              <form action="remind_case.php" method="post" enctype="multipart/form-data">
 
                 <div class="input-info">
                   <label>id</label>
-                  <input type="text" name="remind_id">
+                  <input type="text" name="prisoner_id">
                 </div>
                 <div class="input-info">
                   <label>full name</label>
@@ -101,19 +119,11 @@
                 </div>
                 <div class="input-info">
                   <label>hearing date</label>
-                  <input type="date" name="hearing-date">
-                </div>
-                <div class="input-info">
-                  <label>case type</label>
-                  <input type="text" name="crime_type">
-                </div>
-                <div class="input-info">
-                  <label>case description</label>
-                  <textarea name="crime_description" rows="10" cols="60"></textarea>
+                  <input type="date" name="prisoner_entry-date">
                 </div>
 
                 <div>
-                    <button  type="submit" name="save" class="btn">save</button>
+                    <button  type="submit" name="next" class="btn">next</button>
                 </div>
               </form>
             </div>

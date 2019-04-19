@@ -1,4 +1,4 @@
-<?php include('config/upload.php');?>
+<?php include('config/case_location.php');?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -62,17 +62,29 @@
                   </tr>
                 </thead>
                 <tbody>
-
+                  <?php while ($row = mysqli_fetch_array($case_results)) { ?>
+                    <tr>
+                      <td><?php echo $row['id']; ?></td>
+                      <td><?php echo $row['crime_type']; ?></td>
+                      <td><?php echo $row['crime_description']; ?></td>
+                      <td>
+                        <a href="edit_prisoner.php?edit=">Edit</a>
+                      </td>
+                      <td>
+                        <a href="#">Delete</a>
+                      </td>
+                    </tr>
+                  <?php  } ?>
                 </tbody>
               </table>
             </div>
 
             <div id="tab2" class="tabContent">
-              <form action="prisoner.php" method="post" enctype="multipart/form-data">
+              <form action="case.php" method="post" enctype="multipart/form-data">
 
                 <div class="input-info">
                   <label>crime type</label>
-                  <input type="text" name="prisoner_name">
+                  <input type="text" name="crime_type">
                 </div>
                 <div class="input-info">
                   <label>crime description</label>
