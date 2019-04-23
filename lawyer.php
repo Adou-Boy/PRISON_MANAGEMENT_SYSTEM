@@ -6,7 +6,6 @@
     <link rel="stylesheet" href="css/home_index.css">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="register_sign-in/css/sign_up-sign_in.css">
-    <link rel="stylesheet" href="css/home_index.css">
     <link rel="stylesheet" href="css/prisoner.css">
     <link rel="stylesheet" href="css/prisoner_list.css">
     <link rel="stylesheet" href="css/prisoner_details.css">
@@ -78,10 +77,10 @@
                       <td><?php echo $row['email']; ?></td>
                       <td><?php echo $row['address']; ?></td>
                       <td>
-                        <a href="edit_prisoner.php?edit=">Edit</a>
+                        <a class="edit_btn" href="edit_lawyer.php?edit=<?php echo $row['lawyer_id']; ?>">Edit</a>
                       </td>
                       <td>
-                        <a href="#">Delete</a>
+                        <a class="del_btn" href="lawyer.php?del=<?php echo $row['lawyer_id']; ?>">Delete</a>
                       </td>
                     </tr>
                     <?php $count = $count + 1; ?>
@@ -94,7 +93,7 @@
               <form action="lawyer.php" method="post" enctype="multipart/form-data">
                 <div class="input-info">
                   <label>prisoner id</label>
-                  <select class="" name="id">
+                  <select class="" name="lawyer_pri_id">
                   <?php while ($id_list = mysqli_fetch_array($results)) { ?>
                       <option><?php echo $id_list['prisoner_id']; ?></option>
                   <?php } ?>
@@ -106,11 +105,11 @@
                 </div>
                 <div class="input-info">
                   <label>lawyer name</label>
-                  <input type="text" name="prisoner_name">
+                  <input type="text" name="lawyer_name">
                 </div>
                 <div class="input-info">
                   <label>gender</label>
-                  <input type="text" name="prisoner_gender">
+                  <input type="text" name="lawyer_gender">
                 </div>
                 <div class="input-info">
                   <label>phone</label>
@@ -122,7 +121,7 @@
                 </div>
                 <div class="input-info">
                   <label>address</label>
-                  <textarea name="prisoner_address" rows="5" cols="55"></textarea>
+                  <textarea name="lawyer_address" rows="5" cols="55"></textarea>
                 </div>
 
                 <div>

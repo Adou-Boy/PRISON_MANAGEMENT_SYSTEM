@@ -1,20 +1,18 @@
 <?php include('config/upload.php');
-  $new_prisoner_id = "";
-  $new_name = "";
-  $new_gender = "";
-  $new_age = "";
-  $new_address = "";
-  $new_entry_date = "";
-  $new_release_date = "";
-  if(mysqli_num_rows($prisoner_record_results) == 1) {
-    while($reminder = mysqli_fetch_array($prisoner_record_results)) {
-      $new_prisoner_id = $reminder['prisoner_id'];
-      $new_name = $reminder['name'];
-      $new_gender = $reminder['gender'];
-      $new_age = $reminder['age'];
-      $new_address = $reminder['address'];
-      $new_entry_date = $reminder['entry_date'];
-      $new_release_date = $reminder['release_date'];
+  $new_transfer_pri_id = "";
+  $new_transfer_id = "";
+  $new_location_from = "";
+  $new_location_to = "";
+  $new_transfer_date = "";
+  $new_transfer_reason = "";
+  if(mysqli_num_rows($transfer_record_results) == 1) {
+    while($reminder = mysqli_fetch_array($transfer_record_results)) {
+      $new_transfer_pri_id = $reminder['prisoner_id'];
+      $new_transfer_id = $reminder['id'];
+      $new_location_from = $reminder['location_from'];
+      $new_location_to = $reminder['location_to'];
+      $new_transfer_date = $reminder['transfer_date'];
+      $new_transfer_reason = $reminder['transfer_reason'];
     }
   }
 ?>
@@ -68,37 +66,30 @@
 
           <div class="right_side_container">
             <div class="tabContent show">
-              <form action="prisoner.php" method="post" enctype="multipart/form-data">
-                <div class="input-info">
-                    <input type="file" name="profile_pic">
-                </div>
+              <form action="transfer.php" method="post" enctype="multipart/form-data">
                 <div class="input-info">
                   <label>prisoner id</label>
-                  <input type="text" name="prisoner_id" value="<?php echo $new_prisoner_id; ?>">
+                  <input type="text" name="transfer_pri_id" value="<?php echo $new_transfer_pri_id; ?>">
                 </div>
                 <div class="input-info">
-                  <label>prisoner name</label>
-                  <input type="text" name="prisoner_name" value="<?php echo $new_name; ?>">
+                  <label>transfer id</label>
+                  <input type="text" name="transfer_id" value="<?php echo $new_transfer_id; ?>">
                 </div>
                 <div class="input-info">
-                  <label>gender</label>
-                  <input type="text" name="prisoner_gender" value="<?php echo $new_gender; ?>">
+                  <label>location from</label>
+                  <input type="text" name="location_from" value="<?php echo $new_location_from; ?>">
                 </div>
                 <div class="input-info">
-                  <label>age</label>
-                  <input type="text" name="prisoner_age" value="<?php echo $new_age; ?>">
+                  <label>location to</label>
+                  <input type="text" name="location_to" value="<?php echo $new_location_to; ?>">
                 </div>
                 <div class="input-info">
-                  <label>address</label>
-                  <input type="text" name="prisoner_address" value="<?php echo $new_address; ?>">
+                  <label>transfer date</label>
+                  <input type="date" name="transfer_date" value="<?php echo $new_transfer_date; ?>">
                 </div>
                 <div class="input-info">
-                  <label>entry date</label>
-                  <input type="date" name="prisoner_entry-date" value="<?php echo $new_entry_date; ?>">
-                </div>
-                <div class="input-info">
-                  <label>release date</label>
-                  <input type="date" name="prisoner_release-date" value="<?php echo $new_release_date; ?>">
+                  <label>transfer reason</label>
+                  <textarea name="transfer_reason" rows="8" cols="80"><?php echo $new_transfer_reason; ?></textarea>
                 </div>
 
                 <div>

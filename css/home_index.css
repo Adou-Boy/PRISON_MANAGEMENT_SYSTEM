@@ -78,3 +78,18 @@ body {
   padding-right: 200px;
   font-size: 20px;
 }
+
+.edit_btn, .del_btn {
+  text-decoration: none;
+  padding: 2px 5px;
+  color: white;
+  border-radius: 3px;
+}
+
+.edit_btn {
+  background: #2E8B57;
+}
+
+.del_btn {
+  background: #800000;
+}

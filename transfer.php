@@ -1,4 +1,4 @@
-<?php include('config/upload.php');?>
+<?php include('config/upload.php'); ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -6,7 +6,6 @@
     <link rel="stylesheet" href="css/home_index.css">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="register_sign-in/css/sign_up-sign_in.css">
-    <link rel="stylesheet" href="css/home_index.css">
     <link rel="stylesheet" href="css/prisoner.css">
     <link rel="stylesheet" href="css/prisoner_list.css">
     <link rel="stylesheet" href="css/prisoner_details.css">
@@ -76,10 +75,10 @@
                       <td><?php echo $row['transfer_date']; ?></td>
                       <td><?php echo $row['transfer_reason']; ?></td>
                       <td>
-                        <a href="edit_prisoner.php?edit=">Edit</a>
+                        <a class="edit_btn" href="edit_transfer.php?edit=<?php echo $row['id']; ?>">Edit</a>
                       </td>
                       <td>
-                        <a href="#">Delete</a>
+                        <a class="del_btn" href="transfer.php?del=<?php echo $row['id']; ?>">Delete</a>
                       </td>
                     </tr>
                     <?php $count = $count + 1; ?>
@@ -92,7 +91,7 @@
               <form action="transfer.php" method="post" enctype="multipart/form-data">
                 <div class="input-info">
                   <label>prisoner id</label>
-                  <select class="" name="id">
+                  <select class="" name="transfer_pri_id">
                   <?php while ($id_list = mysqli_fetch_array($results)) { ?>
                       <option><?php echo $id_list['prisoner_id']; ?></option>
                   <?php } ?>

@@ -1,4 +1,7 @@
-<?php include('config/upload.php');?>
+<?php include('config/upload.php');
+  $pris_id = "";
+  $name = "";
+?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -6,7 +9,6 @@
     <link rel="stylesheet" href="css/home_index.css">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="register_sign-in/css/sign_up-sign_in.css">
-    <link rel="stylesheet" href="css/home_index.css">
     <link rel="stylesheet" href="css/prisoner.css">
     <link rel="stylesheet" href="css/prisoner_list.css">
     <link rel="stylesheet" href="css/prisoner_details.css">
@@ -78,10 +80,10 @@
                       <td><?php echo $row['entry_date']; ?></td>
                       <td><?php echo $row['release_date']; ?></td>
                       <td>
-                        <a href="edit_prisoner.php?edit=">Edit</a>
+                        <a class="edit_btn"  href="edit_prisoner.php?edit=<?php echo $row['prisoner_id']; ?>">Edit</a>
                       </td>
                       <td>
-                        <a href="#">Delete</a>
+                        <a class="del_btn" href="prisoner.php?del=<?php echo $row['prisoner_id']; ?>">Delete</a>
                       </td>
                     </tr>
                     <?php $count = $count + 1; ?>
@@ -98,11 +100,18 @@
                 </div>
                 <div class="input-info">
                   <label>prisoner id</label>
-                  <input type="text" name="prisoner_id">
+                  <select id="sl" name="prisoner_id" onchange="popu('sl', 's2')">
+                    <?php while ($pri_id = mysqli_fetch_array($remind_results)) { ?>
+                      <?php $pris_id = $pri_id['remind_id']; ?>
+                        <option><?php echo $pris_id; ?></option>
+                      <?php } ?>
+                  </select>
                 </div>
                 <div class="input-info">
                   <label>prisoner name</label>
-                  <input type="text" name="prisoner_name">
+                  <select id="s2" name="prisoner_name">
+                    <option value=""></option>
+                  </select>
                 </div>
                 <div class="input-info">
                   <label>gender</label>

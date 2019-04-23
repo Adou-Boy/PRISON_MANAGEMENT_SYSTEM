@@ -15,3 +15,11 @@ function openTab(e, tabId) {
   document.getElementById(tabId).style.display = "block";
   e.currentTarget.className += ' active';
 }
+
+function popu(s1, s2) {
+  var s1 = document.getElementById(s1);
+  var s = s1.value;
+  var newOption = document.createElement("option");
+  newOption.innerHTML = s;
+  s2.add(newOption);
+}

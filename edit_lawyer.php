@@ -1,20 +1,20 @@
 <?php include('config/upload.php');
-  $new_prisoner_id = "";
-  $new_name = "";
-  $new_gender = "";
-  $new_age = "";
-  $new_address = "";
-  $new_entry_date = "";
-  $new_release_date = "";
-  if(mysqli_num_rows($prisoner_record_results) == 1) {
-    while($reminder = mysqli_fetch_array($prisoner_record_results)) {
-      $new_prisoner_id = $reminder['prisoner_id'];
-      $new_name = $reminder['name'];
-      $new_gender = $reminder['gender'];
-      $new_age = $reminder['age'];
-      $new_address = $reminder['address'];
-      $new_entry_date = $reminder['entry_date'];
-      $new_release_date = $reminder['release_date'];
+  $new_lawyer_pri_id = "";
+  $new_lawyer_id = "";
+  $new_lawyer_name = "";
+  $new_lawyer_gender = "";
+  $new_lawyer_email = "";
+  $new_lawyer_phone = "";
+  $new_lawyer_address = "";
+  if(mysqli_num_rows($lawyer_record_results) == 1) {
+    while($reminder = mysqli_fetch_array($lawyer_record_results)) {
+      $new_lawyer_pri_id = $reminder['prisoner_id'];
+      $new_lawyer_id = $reminder['lawyer_id'];
+      $new_lawyer_name = $reminder['full_name'];
+      $new_lawyer_gender = $reminder['gender'];
+      $new_lawyer_email = $reminder['email'];
+      $new_lawyer_phone = $reminder['phone'];
+      $new_lawyer_address = $reminder['address'];
     }
   }
 ?>
@@ -68,37 +68,34 @@
 
           <div class="right_side_container">
             <div class="tabContent show">
-              <form action="prisoner.php" method="post" enctype="multipart/form-data">
-                <div class="input-info">
-                    <input type="file" name="profile_pic">
-                </div>
+              <form action="lawyer.php" method="post" enctype="multipart/form-data">
                 <div class="input-info">
                   <label>prisoner id</label>
-                  <input type="text" name="prisoner_id" value="<?php echo $new_prisoner_id; ?>">
+                  <input type="text" name="lawyer_pri_id" value="<?php echo $new_lawyer_pri_id; ?>">
                 </div>
                 <div class="input-info">
-                  <label>prisoner name</label>
-                  <input type="text" name="prisoner_name" value="<?php echo $new_name; ?>">
+                  <label>lawyer id</label>
+                  <input type="text" name="lawyer_id" value="<?php echo $new_lawyer_id; ?>">
+                </div>
+                <div class="input-info">
+                  <label>lawyer name</label>
+                  <input type="text" name="lawyer_name" value="<?php echo $new_lawyer_name; ?>">
                 </div>
                 <div class="input-info">
                   <label>gender</label>
-                  <input type="text" name="prisoner_gender" value="<?php echo $new_gender; ?>">
+                  <input type="text" name="lawyer_gender" value="<?php echo $new_lawyer_gender; ?>">
                 </div>
                 <div class="input-info">
-                  <label>age</label>
-                  <input type="text" name="prisoner_age" value="<?php echo $new_age; ?>">
+                  <label>phone</label>
+                  <input type="text" name="lawyer_phone" value="<?php echo $new_lawyer_phone; ?>">
+                </div>
+                <div class="input-info">
+                  <label>email</label>
+                  <input type="email" name="lawyer_email" value="<?php echo $new_lawyer_email; ?>">
                 </div>
                 <div class="input-info">
                   <label>address</label>
-                  <input type="text" name="prisoner_address" value="<?php echo $new_address; ?>">
-                </div>
-                <div class="input-info">
-                  <label>entry date</label>
-                  <input type="date" name="prisoner_entry-date" value="<?php echo $new_entry_date; ?>">
-                </div>
-                <div class="input-info">
-                  <label>release date</label>
-                  <input type="date" name="prisoner_release-date" value="<?php echo $new_release_date; ?>">
+                  <textarea name="lawyer_address" rows="5" cols="55"><?php echo $new_lawyer_address; ?></textarea>
                 </div>
 
                 <div>

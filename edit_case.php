@@ -1,20 +1,10 @@
 <?php include('config/upload.php');
-  $new_prisoner_id = "";
-  $new_name = "";
-  $new_gender = "";
-  $new_age = "";
-  $new_address = "";
-  $new_entry_date = "";
-  $new_release_date = "";
-  if(mysqli_num_rows($prisoner_record_results) == 1) {
-    while($reminder = mysqli_fetch_array($prisoner_record_results)) {
-      $new_prisoner_id = $reminder['prisoner_id'];
-      $new_name = $reminder['name'];
-      $new_gender = $reminder['gender'];
-      $new_age = $reminder['age'];
-      $new_address = $reminder['address'];
-      $new_entry_date = $reminder['entry_date'];
-      $new_release_date = $reminder['release_date'];
+  $new_crime_type = "";
+  $new_crime_description = "";
+  if(mysqli_num_rows($crime_record_results) == 1) {
+    while($reminder = mysqli_fetch_array($crime_record_results)) {
+      $new_crime_type = $reminder['crime_type'];
+      $new_crime_description = $reminder['description'];
     }
   }
 ?>
@@ -68,37 +58,14 @@
 
           <div class="right_side_container">
             <div class="tabContent show">
-              <form action="prisoner.php" method="post" enctype="multipart/form-data">
+              <form action="case.php" method="post" enctype="multipart/form-data">
                 <div class="input-info">
-                    <input type="file" name="profile_pic">
+                  <label>crime type</label>
+                  <input type="text" name="crime_type" value="<?php echo $new_crime_type; ?>">
                 </div>
                 <div class="input-info">
-                  <label>prisoner id</label>
-                  <input type="text" name="prisoner_id" value="<?php echo $new_prisoner_id; ?>">
-                </div>
-                <div class="input-info">
-                  <label>prisoner name</label>
-                  <input type="text" name="prisoner_name" value="<?php echo $new_name; ?>">
-                </div>
-                <div class="input-info">
-                  <label>gender</label>
-                  <input type="text" name="prisoner_gender" value="<?php echo $new_gender; ?>">
-                </div>
-                <div class="input-info">
-                  <label>age</label>
-                  <input type="text" name="prisoner_age" value="<?php echo $new_age; ?>">
-                </div>
-                <div class="input-info">
-                  <label>address</label>
-                  <input type="text" name="prisoner_address" value="<?php echo $new_address; ?>">
-                </div>
-                <div class="input-info">
-                  <label>entry date</label>
-                  <input type="date" name="prisoner_entry-date" value="<?php echo $new_entry_date; ?>">
-                </div>
-                <div class="input-info">
-                  <label>release date</label>
-                  <input type="date" name="prisoner_release-date" value="<?php echo $new_release_date; ?>">
+                  <label>crime description</label>
+                  <textarea name="crime_description" rows="10" cols="80"><?php echo $new_crime_description; ?></textarea>
                 </div>
 
                 <div>

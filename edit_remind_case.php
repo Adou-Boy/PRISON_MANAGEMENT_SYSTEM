@@ -1,20 +1,20 @@
 <?php include('config/upload.php');
-  $new_prisoner_id = "";
-  $new_name = "";
-  $new_gender = "";
-  $new_age = "";
-  $new_address = "";
-  $new_entry_date = "";
-  $new_release_date = "";
-  if(mysqli_num_rows($prisoner_record_results) == 1) {
-    while($reminder = mysqli_fetch_array($prisoner_record_results)) {
-      $new_prisoner_id = $reminder['prisoner_id'];
-      $new_name = $reminder['name'];
-      $new_gender = $reminder['gender'];
-      $new_age = $reminder['age'];
-      $new_address = $reminder['address'];
-      $new_entry_date = $reminder['entry_date'];
-      $new_release_date = $reminder['release_date'];
+  $new_remind_id = "";
+  $new_remind_name = "";
+  $new_remind_gender = "";
+  $new_remind_age = "";
+  $new_remind_address = "";
+  $new_remind_unit = "";
+  $new_remind_hearing_date = "";
+  if(mysqli_num_rows($remind_record_results) == 1) {
+    while($reminder = mysqli_fetch_array($remind_record_results)) {
+      $new_remind_id = $reminder['remind_id'];
+      $new_remind_name = $reminder['name'];
+      $new_remind_gender = $reminder['gender'];
+      $new_remind_age = $reminder['age'];
+      $new_remind_address = $reminder['address'];
+      $new_remind_unit = $reminder['remind_unit'];
+      $new_remind_hearing_date = $reminder['hearing_date'];
     }
   }
 ?>
@@ -68,37 +68,34 @@
 
           <div class="right_side_container">
             <div class="tabContent show">
-              <form action="prisoner.php" method="post" enctype="multipart/form-data">
+              <form action="remind_case.php" method="post" enctype="multipart/form-data">
                 <div class="input-info">
-                    <input type="file" name="profile_pic">
+                  <label>id</label>
+                  <input type="text" name="remind_id" value="<?php echo $new_remind_id; ?>">
                 </div>
                 <div class="input-info">
-                  <label>prisoner id</label>
-                  <input type="text" name="prisoner_id" value="<?php echo $new_prisoner_id; ?>">
-                </div>
-                <div class="input-info">
-                  <label>prisoner name</label>
-                  <input type="text" name="prisoner_name" value="<?php echo $new_name; ?>">
+                  <label>full name</label>
+                  <input type="text" name="remind_name" value="<?php echo $new_remind_name; ?>">
                 </div>
                 <div class="input-info">
                   <label>gender</label>
-                  <input type="text" name="prisoner_gender" value="<?php echo $new_gender; ?>">
+                  <input type="text" name="remind_gender" value="<?php echo $new_remind_gender; ?>">
                 </div>
                 <div class="input-info">
                   <label>age</label>
-                  <input type="text" name="prisoner_age" value="<?php echo $new_age; ?>">
+                  <input type="text" name="remind_age" value="<?php echo $new_remind_age; ?>">
                 </div>
                 <div class="input-info">
                   <label>address</label>
-                  <input type="text" name="prisoner_address" value="<?php echo $new_address; ?>">
+                  <input type="text" name="remind_address" value="<?php echo $new_remind_address; ?>">
                 </div>
                 <div class="input-info">
-                  <label>entry date</label>
-                  <input type="date" name="prisoner_entry-date" value="<?php echo $new_entry_date; ?>">
+                  <label>remind_unit</label>
+                  <input type="text" name="remind_unit" value="<?php echo $new_remind_unit; ?>">
                 </div>
                 <div class="input-info">
-                  <label>release date</label>
-                  <input type="date" name="prisoner_release-date" value="<?php echo $new_release_date; ?>">
+                  <label>hearing date</label>
+                  <input type="date" name="remind_hearing-date" value="<?php echo $new_remind_hearing_date; ?>">
                 </div>
 
                 <div>

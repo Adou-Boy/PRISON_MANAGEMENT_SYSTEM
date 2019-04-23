@@ -1,4 +1,4 @@
-<?php include('config/case_location.php');?>
+<?php include('config/upload.php'); ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -6,7 +6,6 @@
     <link rel="stylesheet" href="css/home_index.css">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="register_sign-in/css/sign_up-sign_in.css">
-    <link rel="stylesheet" href="css/home_index.css">
     <link rel="stylesheet" href="css/prisoner.css">
     <link rel="stylesheet" href="css/prisoner_list.css">
     <link rel="stylesheet" href="css/prisoner_details.css">
@@ -56,7 +55,7 @@
                 <thead>
                   <tr>
                     <th>No</th>
-                    <th>CASE TYPE</th>
+                    <th>TYPE</th>
                     <th>CASE DESCRIPTION</th>
                     <th colspan="2">ACTION</th>
                   </tr>
@@ -66,12 +65,12 @@
                     <tr>
                       <td><?php echo $row['id']; ?></td>
                       <td><?php echo $row['crime_type']; ?></td>
-                      <td><?php echo $row['crime_description']; ?></td>
+                      <td><?php echo $row['description']; ?></td>
                       <td>
-                        <a href="edit_prisoner.php?edit=">Edit</a>
+                        <a class="edit_btn" href="edit_case.php?edit=<?php echo $row['id']; ?>">Edit</a>
                       </td>
                       <td>
-                        <a href="#">Delete</a>
+                        <a class="del_btn" href="case.php?del=<?php echo $row['id']; ?>">Delete</a>
                       </td>
                     </tr>
                   <?php  } ?>

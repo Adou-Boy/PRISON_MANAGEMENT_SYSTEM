@@ -6,7 +6,6 @@
     <link rel="stylesheet" href="css/home_index.css">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="register_sign-in/css/sign_up-sign_in.css">
-    <link rel="stylesheet" href="css/home_index.css">
     <link rel="stylesheet" href="css/prisoner.css">
     <link rel="stylesheet" href="css/prisoner_list.css">
     <link rel="stylesheet" href="css/prisoner_details.css">
@@ -78,10 +77,10 @@
                       <td><?php echo $row['remind_unit']; ?></td>
                       <td><?php echo $row['hearing_date']; ?></td>
                       <td>
-                        <a href="edit_prisoner.php?edit=">Edit</a>
+                        <a class="edit_btn" href="edit_remind_case.php?edit=<?php echo $row['remind_id']; ?>">Edit</a>
                       </td>
                       <td>
-                        <a href="#">Delete</a>
+                        <a class="del_btn" href="remind_case.php?del=<?php echo $row['remind_id']; ?>">Delete</a>
                       </td>
                     </tr>
                     <?php $count = $count + 1; ?>
@@ -95,23 +94,23 @@
 
                 <div class="input-info">
                   <label>id</label>
-                  <input type="text" name="prisoner_id">
+                  <input type="text" name="remind_id">
                 </div>
                 <div class="input-info">
                   <label>full name</label>
-                  <input type="text" name="prisoner_name">
+                  <input type="text" name="remind_name">
                 </div>
                 <div class="input-info">
                   <label>gender</label>
-                  <input type="text" name="prisoner_gender">
+                  <input type="text" name="remind_gender">
                 </div>
                 <div class="input-info">
                   <label>age</label>
-                  <input type="text" name="prisoner_age">
+                  <input type="text" name="remind_age">
                 </div>
                 <div class="input-info">
                   <label>address</label>
-                  <input type="text" name="prisoner_address">
+                  <input type="text" name="remind_address">
                 </div>
                 <div class="input-info">
                   <label>remind_unit</label>
@@ -119,7 +118,7 @@
                 </div>
                 <div class="input-info">
                   <label>hearing date</label>
-                  <input type="date" name="prisoner_entry-date">
+                  <input type="date" name="remind_hearing-date">
                 </div>
 
                 <div>
